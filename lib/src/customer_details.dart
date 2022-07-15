@@ -1,4 +1,3 @@
-import 'package:clock/clock.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hydrawise/hydrawise.dart';
 
@@ -18,15 +17,4 @@ class HCustomerDetails with _$HCustomerDetails {
     Map<String, dynamic> json,
   ) =>
       _$HCustomerDetailsFromJson(json);
-}
-
-extension CustomerDetailsX on HCustomerDetails {
-  HCustomer toCustomer(String apiKey) {
-    return HCustomer(
-      activeControllerId: activeControllerId,
-      customerId: customerId,
-      apiKey: apiKey,
-      lastStatusUpdate: clock.now().millisecondsSinceEpoch,
-    );
-  }
 }

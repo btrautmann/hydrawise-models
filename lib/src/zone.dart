@@ -1,4 +1,3 @@
-import 'package:clock/clock.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'zone.freezed.dart';
@@ -21,24 +20,4 @@ class HZone with _$HZone {
     Map<String, dynamic> json,
   ) =>
       _$HZoneFromJson(json);
-}
-
-extension HZoneX on HZone {
-  int get nextRunMillisecondsSinceEpoch {
-    final currentTimeEpochMillis = clock.now().millisecondsSinceEpoch;
-    final millisUntilNextRun = secondsUntilNextRun * 1000;
-    return currentTimeEpochMillis + millisUntilNextRun;
-  }
-
-  DateTime get dateTimeOfNextRun {
-    return DateTime.fromMillisecondsSinceEpoch(nextRunMillisecondsSinceEpoch);
-  }
-
-  bool get isRunning {
-    return secondsUntilNextRun == 1;
-  }
-
-  bool get isSuspended {
-    return secondsUntilNextRun == 1576800000;
-  }
 }
