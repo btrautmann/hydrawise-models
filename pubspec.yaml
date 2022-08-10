@@ -1,7 +1,7 @@
 name: hydrawise
-description: A starting point for Dart libraries or applications.
-version: 1.0.0
-# homepage: https://www.example.com
+description: Unopinionated models for use in a program that interacts with the Hydrawise API.
+version: 0.0.1
+repository: https://github.com/btrautmann/hydrawise-models
 
 environment:
   sdk: '>=2.16.2 <3.0.0'
